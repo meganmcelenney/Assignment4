@@ -1,0 +1,70 @@
+// Assignment #: 4
+// Name        : Megan McElenney
+// StudentID   : 1214828277
+// Lecture     : T Th 4:30 - 5:45
+// Description : Model class creates a model with a name, CPU speed, and RAM speed. 
+//               It also contains methods to return these attributes and to modify 
+//              them. It also has a toString method with specific print formatting.
+package assignment4;
+
+import java.text.DecimalFormat;
+
+public class Model 
+{
+    //instance variables
+    private String modelName;
+    private double cpuSpeed;
+    private int ramSpeed;
+    
+    DecimalFormat form = new DecimalFormat("0.00");
+    
+    public Model()//default constructor
+    {
+        modelName = "?";
+        cpuSpeed = 0.0;
+        ramSpeed = 0;
+    }
+    
+    public Model(String mod, double cpu, int ram)//contructor
+    {
+        modelName = mod;
+        cpuSpeed = cpu;
+        ramSpeed = ram;
+    }
+    
+    //accessor methods
+    public String getModel()
+    {
+        return modelName;
+    }
+    public double getCPU()
+    {
+        return cpuSpeed;
+    }
+    public int getRAM()
+    {
+        return ramSpeed;
+    }
+            
+    //modifier methods
+    public void setModel(String newModel)
+    {
+        modelName = newModel;
+    }
+    public void setCPU(double newCPU)
+    {
+        cpuSpeed = newCPU;
+    }
+    public void setRAM(int newRam)
+    {
+        ramSpeed = newRam;
+    }
+            
+    //Prints Model in specific format
+    public String toString()
+    {
+        return "Model:\t" + modelName +"\n" +
+        "CPU:\t" + form.format(cpuSpeed) +"GHz \n" +
+        "RAM:\t" + ramSpeed + "GB\n";
+    }
+}
